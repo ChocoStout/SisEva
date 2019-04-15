@@ -17,15 +17,6 @@ const sql = mysql.createConnection({
 
 sql.connect();
 
-router.get('/test', (req, res, next) => {
-    //console.log(req.body);
-    var queryResult = {};
-    queryResult = sql.query('SELECT * FROM CATEGORIAS', function (err, result, fields) {
-        //console.log(result);
-        res.send(result);
-    });
-});
-
 router.post('/registrar', (req, res, next) => {
 
     var usuario = {
@@ -42,8 +33,10 @@ router.post('/registrar', (req, res, next) => {
     usuario.PasswordHash = hashing.passwordHash;
     usuario.PasswordSalt = hashing.salt;
 
+    console.log(usuario);
+
     var query =  sql.query('INSERT INTO Usuarios (Matricula, PasswordHash, PasswordSalt, Nombres, Apellidos) values (?,?,?,?,?)',[usuario.Username,usuario.PasswordHash,usuario.PasswordSalt,usuario.Nombres,usuario.Apellidos],function (error,result) {
-        res.send(result);
+        res.send(usuario);
     });
 });
 
@@ -54,7 +47,7 @@ router.post('/login', (req,res,next) => {
         Password: req.body.password,
         PasswordHash: null,
         PasswordSalt: null
-    }
+    };
 
     var hashing = setSaltHash(usuario.Password);
     usuario.PasswordHash = hashing.passwordHash;
@@ -62,7 +55,10 @@ router.post('/login', (req,res,next) => {
 
     var query = sql.query('SELECT * FROM Usuarios WHERE Matricula  = ?', usuario.Username, function(error,result) {
         if(usuario.PasswordHash == result[0].PasswordHash && usuario.PasswordSalt == result[0].PasswordSalt){
-            res.send(generarJWT(result.Username,result.Nombres,result.Apellidos));
+
+            res.json({
+                token: generarJWT(usuario.Username,result[0].Nombres,result[0].Apellidos)
+            });
         }
         else{
             res.send('datos incorrectos');

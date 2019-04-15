@@ -2,23 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 
 @Component({
-  selector: 'app-nav-bar',
-  templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class NavBarComponent implements OnInit {
+export class HomeComponent implements OnInit {
 
   constructor(private authService: AuthService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   loggedIn() {
     return this.authService.loggedIn();
-  }
-
-  cerrarSesion() {
-    localStorage.removeItem('token');
   }
 
 }
