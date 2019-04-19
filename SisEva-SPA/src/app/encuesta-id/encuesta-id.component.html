@@ -1,4 +1,4 @@
-<form class="container" #formaEncuesta="ngForm" (ngSubmit)="guardar()">
+<form class="container" #formaRegistrar="ngForm" (ngSubmit)="guardar()" id="form-encuesta">
 
   <h2>Encuesta del DPA a docentes</h2>
 
@@ -10,40 +10,40 @@
 
       <div class="cell">
         <label for="Evaluado">Nombre del evaluado</label>
-        <input class="form-control" type="text" name="Evaluado" placeholder="Nombre del encuestado"
-          [(ngModel)]="model.Evaluado" required>
+        <input class="form-control" type="text" name="Evaluado" placeholder="Nombre del encuestado" disabled="true"
+          [(ngModel)]="model.Evaluado">
       </div>
 
       <div class="cell">
         <label for="Evaluador">Evaluador</label>
-        <input type="text" disabled="true" class="form-control" name="Evaluador" [(ngModel)]="model.Evaluador"
-          value="{{authService.getDecodedToken().Nombre}}" >
+        <input type="text" disabled="true" class="form-control" name="Evaluador" [(ngModel)]="model.Evaluador">
       </div>
 
       <div class="cell">
         <label for="Fecha">Carrera</label>
-        <input type="Text" name="Carrera" class="form-control" required type="text" [(ngModel)]="model.Carrera" placeholder="Carrera">
+        <input type="Text" name="Carrera" class="form-control" type="text" [(ngModel)]="model.Carrera" disabled="true">
       </div>
 
       <div class="cell">
         <label for="Asignatura">Nombre de la asignatura</label>
-        <input type="text" name="Asignatura" class="form-control" placeholder="Asignatura"
-          [(ngModel)]="model.Asignatura" required>
+        <input type="text" name="Asignatura" class="form-control" placeholder="Asignatura" disabled="true"
+          [(ngModel)]="model.Asignatura">
       </div>
 
       <div class="cell">
         <label for="Cuatrimestre">Cuatrimestre</label>
-        <input type="number" name="Cuatrimestre" class="form-control" placeholder="1" [(ngModel)]="model.Cuatrimestre"
-          min="1" max="10" required>
+        <input type="number" name="Cuatrimestre" class="form-control" placeholder="1" disabled="true"
+          [(ngModel)]="model.Cuatrimestre" min="1" max="10">
       </div>
 
       <div class="cell">
         <label for="Turno">Turno</label>
-        <select name="Turno" class="form-control" [(ngModel)]="model.Turno" required>
-          <option value="Matutino" selected>Matutino</option>
-          <option value="Vespertino">Vespertino</option>
-          <option value="Nocturno">Nocturno</option>
-        </select>
+        <input name="Turno" class="form-control" type="text" [(ngModel)]="model.Turno" disabled="true">
+      </div>
+
+      <div class="cell">
+        <label for="Fecha">Fecha</label>
+        <input type="Text" name="Fecha" class="form-control" type="text" [(ngModel)]="model.Fecha" disabled="true">
       </div>
 
     </div>
@@ -59,35 +59,35 @@
         <p class="criterio">Sustento teorico</p>
         <p class="descripcion">La informacion proporcionada se basa en varias fuentes y su experiencia profesional</p>
         <input type="number" name="Pregunta1" class="form-control calificacion" min="0" max="10" placeholder="0"
-          [(ngModel)]="model.Pregunta1" required>
+          [(ngModel)]="model.Pregunta1" disabled="true">
       </div>
 
       <div class="pregunta">
         <p class="criterio">Relacion con otros temas o asignaturas</p>
         <p class="descripcion">La explicacion de temas se basa en su uso o aplicacion con temas previos o futuros</p>
         <input type="number" name="Pregunta2" class="form-control calificacion" min="0" max="10" placeholder="0"
-          [(ngModel)]="model.Pregunta2" required>
+          [(ngModel)]="model.Pregunta2" disabled="true">
       </div>
 
       <div class="pregunta">
         <p class="criterio">Distribucion de tiempo</p>
         <p class="descripcion">Organiza y distribuye correctamente el tiempo</p>
         <input type="number" name="Pregunta3" class="form-control calificacion" min="0" max="10" placeholder="0"
-          [(ngModel)]="model.Pregunta3" required>
+          [(ngModel)]="model.Pregunta3" disabled="true">
       </div>
 
       <div class="pregunta">
         <p class="criterio">Dominio del tema</p>
         <p class="descripcion">Muestra solidos conocimientos del tema de manera logica y clara para los alumnos</p>
         <input type="number" name="Pregunta4" class="form-control calificacion" min="0" max="10" placeholder="0"
-          [(ngModel)]="model.Pregunta4" required>
+          [(ngModel)]="model.Pregunta4" disabled="true">
       </div>
 
       <div class="pregunta">
         <p class="criterio">Respuestas a las preguntas</p>
         <p class="descripcion">Contesta de manera adecuada las preguntas del tema</p>
         <input type="number" name="Pregunta5" class="form-control calificacion" min="0" max="10" placeholder="0"
-          [(ngModel)]="model.Pregunta5" required>  
+          [(ngModel)]="model.Pregunta5" disabled="true">
       </div>
 
     </div>
@@ -102,35 +102,35 @@
         <p class="criterio">Dinamica grupal</p>
         <p class="descripcion">Promueve el trabajo grupal y la participacion de los alumnos con el docente</p>
         <input type="number" name="Pregunta6" class="form-control calificacion" min="0" max="10" placeholder="0"
-          [(ngModel)]="model.Pregunta6" required>
+          [(ngModel)]="model.Pregunta6" disabled="true">
       </div>
 
       <div class="pregunta">
         <p class="criterio">Uso de material didactico y TICs</p>
         <p class="descripcion">Utiliza medios como las TIC's para mejorar procesos</p>
         <input type="number" name="Pregunta7" class="form-control calificacion" min="0" max="10" placeholder="0"
-          [(ngModel)]="model.Pregunta7" required>
+          [(ngModel)]="model.Pregunta7" disabled="true">
       </div>
 
       <div class="pregunta">
         <p class="criterio">Interaccion y promocion de la participacion</p>
         <p class="descripcion">Genera preguntas que desarrollen conocimiento y opiniones</p>
         <input type="number" name="Pregunta8" class="form-control calificacion" min="0" max="10" placeholder="0"
-          [(ngModel)]="model.Pregunta8" required>
+          [(ngModel)]="model.Pregunta8" disabled="true">
       </div>
 
       <div class="pregunta">
         <p class="criterio">Exploracion de conocimientos</p>
         <p class="descripcion">Explora conocimientos previos y los une al tema actual</p>
         <input type="number" name="Pregunta9" class="form-control calificacion" min="0" max="10" placeholder="0"
-          [(ngModel)]="model.Pregunta9" required>
+          [(ngModel)]="model.Pregunta9" disabled="true">
       </div>
 
       <div class="pregunta">
         <p class="criterio">Formas de comunicacion</p>
         <p class="descripcion">Se expresa de manera clara, adecuada y respetosa</p>
         <input type="number" name="Pregunta10" class="form-control calificacion" min="0" max="10" placeholder="0"
-          [(ngModel)]="model.Pregunta10" required>
+          [(ngModel)]="model.Pregunta10" disabled="true">
       </div>
 
     </div>
@@ -145,28 +145,28 @@
         <p class="criterio">Entrega oportuna</p>
         <p class="descripcion">Entrego en tiempo y forma la calendarizacion requerida</p>
         <input type="number" name="Pregunta11" class="form-control calificacion" min="0" max="10" placeholder="0"
-          [(ngModel)]="model.Pregunta11" required>
+          [(ngModel)]="model.Pregunta11" disabled="true">
       </div>
 
       <div class="pregunta">
         <p class="criterio">Cumplimiento del programa</p>
         <p class="descripcion">Imparte de acuerdo a la calendarizacion y programa de estudios</p>
         <input type="number" name="Pregunta12" class="form-control calificacion" min="0" max="10" placeholder="0"
-          [(ngModel)]="model.Pregunta12" required>
+          [(ngModel)]="model.Pregunta12" disabled="true">
       </div>
 
       <div class="pregunta">
         <p class="criterio">Actividades de aprendizaje</p>
         <p class="descripcion">Planteo actividades adecuadas en base al programa de estudios</p>
         <input type="number" name="Pregunta13" class="form-control calificacion" min="0" max="10" placeholder="0"
-          [(ngModel)]="model.Pregunta13" required>
+          [(ngModel)]="model.Pregunta13" disabled="true">
       </div>
 
       <div class="pregunta">
         <p class="criterio">Establecimiento de acuerdos</p>
         <p class="descripcion">Establecio reglas de convivencia y formas de entrega</p>
         <input type="number" name="Pregunta14" class="form-control calificacion" min="0" max="10" placeholder="0"
-          [(ngModel)]="model.Pregunta14" required>
+          [(ngModel)]="model.Pregunta14" disabled="true">
       </div>
 
     </div>
@@ -182,14 +182,14 @@
         <p class="descripcion">Valora positivamente la retroalimentacion de los alumnos buscando enriquecerla con
           comentarios propios o de alumnos</p>
         <input type="number" name="Pregunta15" class="form-control calificacion" min="0" max="10" placeholder="0"
-          [(ngModel)]="model.Pregunta15" required>
+          [(ngModel)]="model.Pregunta15" disabled="true">
       </div>
 
       <div class="pregunta">
         <p class="criterio">Actitud ante desacuerdos</p>
         <p class="descripcion">Interviene de manera oportuna y asertiva buscando el bien comun</p>
         <input type="number" name="Pregunta16" class="form-control calificacion" min="0" max="10" placeholder="0"
-          [(ngModel)]="model.Pregunta16" required>
+          [(ngModel)]="model.Pregunta16" disabled="true">
       </div>
 
       <div class="pregunta">
@@ -197,21 +197,28 @@
         <p class="descripcion">Incluye de manera directa a todos los alumnos dejando de lado cualquier tipo de
           discriminacion</p>
         <input type="number" name="Pregunta17" class="form-control calificacion" min="0" max="10" placeholder="0"
-          [(ngModel)]="model.Pregunta17" required>
+          [(ngModel)]="model.Pregunta17" disabled="true">
       </div>
 
       <div class="pregunta">
         <p class="criterio">Motivacion</p>
         <p class="descripcion">Busca mantener a los alumnos interesados en el tema</p>
         <input type="number" name="Pregunta18" class="form-control calificacion" min="0" max="10" placeholder="0"
-          [(ngModel)]="model.Pregunta18" required>
+          [(ngModel)]="model.Pregunta18" disabled="true">
       </div>
 
     </div>
   </div>
 
   <div class="form-group text-center">
-    <button class="btn btn-success m-3" type="submit" [disabled]="!formaEncuesta.valid">Guardar</button>
-    <button class="btn btn-warning m-3" type="reset" (click)="cancelar()">Cancelar</button>
+    <button class="btn btn-warning m-3" type="reset" (click)="volver()">Volver</button>
   </div>
 </form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $(".form-control").prop("disabled", true);
+  });
+
+</script>

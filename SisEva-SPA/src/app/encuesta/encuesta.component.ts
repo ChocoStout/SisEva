@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EncuestasService } from '../services/encuestas.service';
 import { AuthService } from '../services/auth.service';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-encuesta',
@@ -13,7 +12,7 @@ export class EncuestaComponent implements OnInit {
   model: any = {};
 
   // tslint:disable-next-line: max-line-length
-  constructor(private router: Router, private encuestasService: EncuestasService, public authService: AuthService, private http: HttpClient) { }
+  constructor(private router: Router, private encuestasService: EncuestasService, public authService: AuthService) { }
 
   ngOnInit() {
     this.model.Evaluador = this.authService.getDecodedToken().Nombre;
@@ -27,7 +26,7 @@ export class EncuestaComponent implements OnInit {
     }, error => {
       alert('sad');
     }, () => {
-      this.router.navigate(['']);
+      this.router.navigate(['reportes']);
     });
   }
 

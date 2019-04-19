@@ -1,13 +1,11 @@
-<app-nav-bar></app-nav-bar>
-
 <!--Si el usuario NO esta loggeado-->
 <div class="container" style="margin-top:6%" *ngIf="!loggedIn()">
   <div style=text-align:center>
     <h1>Evaluacion a docentes</h1>
     <p class="lead">Registrate para iniciar</p>
     <div class="text-center">
-      <button class="btn btn-primary btn-lg mr-2" [routerLink]="[ '/registrar']">Registrar</button>
-      <button class="btn btn-info btn-lg">Acerca de</button>
+      <button class="btn btn-primary btn-lg mr-2" [routerLink]="[ 'registrar']">Registrar</button>
+      <button class="btn btn-info btn-lg" [routerLink]="[ 'about']">Acerca de</button>
     </div>
   </div>
 </div>

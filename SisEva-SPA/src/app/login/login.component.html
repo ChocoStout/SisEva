@@ -17,7 +17,7 @@
         [(ngModel)]="model.password">
     </div>
 
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Inicia sesion</button>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!loginForm.valid">Inicia sesion</button>
     <button class="btn btn-lg btn-warning btn-block" [routerLink]="['']">Volver</button>
   </form>
 

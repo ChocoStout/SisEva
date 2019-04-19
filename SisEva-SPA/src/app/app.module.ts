@@ -13,6 +13,10 @@ import { LoginComponent } from './login/login.component';
 import { RegistrarComponent } from './registrar/registrar.component';
 import { EncuestaComponent } from './encuesta/encuesta.component';
 import { AuthGuard } from './guards/auth.guard';
+import { fromEventPattern } from 'rxjs';
+import { EncuestaIdComponent } from './encuesta-id/encuesta-id.component';
+import { ReportesComponent } from './reportes/reportes.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
    declarations: [
@@ -21,7 +25,10 @@ import { AuthGuard } from './guards/auth.guard';
       HomeComponent,
       LoginComponent,
       RegistrarComponent,
-      EncuestaComponent
+      EncuestaComponent,
+      EncuestaIdComponent,
+      ReportesComponent,
+      AboutComponent
    ],
    imports: [
       BrowserModule,

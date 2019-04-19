@@ -1,0 +1,34 @@
+<div>
+    <table class="table table-hover table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Evaluador</th>
+            <th scope="col">Evaluado</th>
+            <th scope="col">Carrera</th>
+            <th scope="col">Asingatura</th>
+            <th scope="col">Cuatrimestre</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Conocimientos</th>
+            <th scope="col">Habilidades</th>
+            <th scope="col">Planeacion</th>
+            <th scope="col">Actitudes</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let x of model">
+          <tr (click)="test(x)">
+            <td> {{x.Evaluador}} </td>
+            <td> {{x.Evaluado}} </td>
+            <td> {{x.Carrera}} </td>
+            <td> {{x.Asignatura}} </td>
+            <td> {{x.Cuatrimeste}} </td>
+            <td> {{x.Fecha}} </td>
+            <td> {{x.Conocimientos}} </td>
+            <td> {{x.Habilidades}} </td>
+            <td> {{x.Planeacion}} </td>
+            <td> {{x.Actitudes}} </td>
+            <td> {{x.Actitudes + x.Habilidades + x.Planeacion + x.Conocimientos}} </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
