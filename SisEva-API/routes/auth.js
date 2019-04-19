@@ -57,7 +57,7 @@ router.post('/login', (req,res,next) => {
         if(usuario.PasswordHash == result[0].PasswordHash && usuario.PasswordSalt == result[0].PasswordSalt){
 
             res.json({
-                token: generarJWT(usuario.Username,result[0].Nombres,result[0].Apellidos)
+                token: generarJWT(usuario.Username,result[0].Nombres,result[0].Apellidos,result[0].IdUsuario)
             });
         }
         else{
@@ -98,13 +98,14 @@ function setSaltHash(password) {
  * @param {string} Nombres - Nombres del usuario
  * @param {string} Apellidos - Apellidos del usuario
  */
-function generarJWT(Matricula,Nombres,Apellidos) {
+function generarJWT(Matricula,Nombres,Apellidos,IdUsuario) {
 
     const key = 'key super secreta que nadie nunca vera a menos que entre a github lol'
 
     var claims = {
         Matricula: Matricula,
-        Nombre: Nombres + ' ' + Apellidos
+        Nombre: Nombres + ' ' + Apellidos,
+        IdUsuario: IdUsuario
     };
 
     var jwt = nJWT.create(claims,key);

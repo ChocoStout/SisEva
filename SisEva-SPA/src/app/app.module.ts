@@ -12,6 +12,7 @@ import { AuthService } from './services/auth.service';
 import { LoginComponent } from './login/login.component';
 import { RegistrarComponent } from './registrar/registrar.component';
 import { EncuestaComponent } from './encuesta/encuesta.component';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
    declarations: [
@@ -29,7 +30,8 @@ import { EncuestaComponent } from './encuesta/encuesta.component';
       FormsModule
    ],
    providers: [
-      AuthService
+      AuthService,
+      AuthGuard
    ],
    bootstrap: [
       AppComponent

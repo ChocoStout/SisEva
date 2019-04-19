@@ -1,0 +1,45 @@
+form{
+    margin-top: 10%
+}
+
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.cell{
+    flex: 0 0 20%;
+    height: 50px;
+    margin-bottom: 5px;
+}
+
+.section{
+    padding: 20px;
+    border: 1px solid black;
+    margin-bottom: 15px;
+}
+
+.pregunta{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.criterio{
+    flex: 0 0 20%;
+    height: 50px;
+    margin-bottom: 5px;
+}
+
+.descripcion{
+    flex: 0 0 60%;
+    height: 50px;
+    margin-bottom: 5px;
+}
+
+.calificacion{
+    flex: 0 0 20%;
+    margin-bottom: 5px;
+}

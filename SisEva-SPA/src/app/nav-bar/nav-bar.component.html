@@ -6,7 +6,7 @@
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto" *ngIf="loggedIn()">
       <li class="nav-item">
-        <a class="nav-link" href="#">Nueva encuesta</a>
+        <a class="nav-link" [routerLink]="[ '/encuesta']">Nueva encuesta</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Reportes</a>
